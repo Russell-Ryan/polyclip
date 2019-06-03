@@ -41,8 +41,7 @@ for j,(x,y) in enumerate(zip(px,py)):
        print(area[j0:j1])
 ```
 
-
-
+But see also the test/test.py examples.
 
 
 
