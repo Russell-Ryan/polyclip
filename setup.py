@@ -10,6 +10,7 @@ setup(name='polyclip',\
       keywords="Sutherland Hodgman polygon clipping C python",\
       description='Python API for calling JD Smith polyclip',\
       license='MIT',\
+      #install_requires=['numpy'],\
       classifiers=["Development Status :: 5 Production/Stable ",
                    'Intended Audience :: Science/Research',
                    'Topic :: Scientific/Engineering :: Astronomy',],\

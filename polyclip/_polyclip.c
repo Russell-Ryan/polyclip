@@ -57,12 +57,14 @@ static PyObject *_multi(PyObject *self,PyObject *args){
   Py_DECREF(yyarr);
   Py_DECREF(nclip_polyarr);
   Py_DECREF(areasarr);
-
-
   
   /* call function */
   int n=n_poly[0];
   polyclip_multi(l,r,b,t,px,py,n,poly_inds,xx,yy,nclip_poly,areas);
+  
+  //printf("C: %f %f\n",px[0],xx[0]);
+  
+
   n_poly[0]=n;
   
   /* Do something interesting here. */

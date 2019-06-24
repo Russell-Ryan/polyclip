@@ -259,6 +259,7 @@ void polyclip_multi(int *l,int *r, int *b, int *t,float*px,float*py,
   py_out=(float *)malloc((nv_max)*sizeof(float));
 
   
+  
   /* Clip each polygon and accumulate results */
   for(indx=0,prev_pind=0,k=0;k<n_poly;k++) {
     nverts=poly_inds[k+1]-prev_pind;
@@ -266,7 +267,12 @@ void polyclip_multi(int *l,int *r, int *b, int *t,float*px,float*py,
     for(i=l[k];i<=r[k];i++) {
       for(j=b[k];j<=t[k];j++) {
 	if((nv_clip=polyclip(px,py,nverts,i,j,px_out,py_out))) {
+	  
 	  area=polyclip_area(px_out,py_out,nv_clip);
+	  /*
+	  for(int rr=0;rr<nv_clip;rr++) printf("%f %f\n",px_out[rr],py_out[rr]);
+	  printf("area: %f\n",area);
+	  printf("\n\n\n");*/
 	  if (area==0.0) continue; /* Discard degenerates */
 	  areas[indx]=area;	
 	  this_nclip_poly++;
@@ -284,6 +290,8 @@ void polyclip_multi(int *l,int *r, int *b, int *t,float*px,float*py,
     px+=nverts; py+=nverts;	/* Offset to next input poly */
   }
   free(px_out); free(py_out);
+
+
 }
 
 //------------------------------------------------------------------------

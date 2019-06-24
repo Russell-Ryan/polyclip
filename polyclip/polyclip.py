@@ -24,11 +24,20 @@ class Polyclip(PolyclipTypes):
         self._sx=dim[0]
         self._sy=dim[1]
 
-    
-        
-    def __call__(self,x,y):
-        ''' Call the multi polygon clipping '''
+    @property
+    def naxis(self):
+        return (self._sx,self._sy)
 
+        
+
+    def __call__(self,x,y):
+        return self.multi(x,y)
+
+        
+        
+    def multi(self,x,y):
+
+        ''' Call the multi polygon clipping '''
         
         # compute bounding box
         l=np.clip(np.floor(x.min(axis=1)-1),0,self._sx).astype(self.INT)
@@ -45,6 +54,8 @@ class Polyclip(PolyclipTypes):
         for i,xx in enumerate(x):
             polyinds[i+1]=polyinds[i]+len(xx)
 
+
+
         # the number of output pixels must be an array (this is a C-gotcha)
         nclip=np.array([0],self.INT)
         
@@ -53,6 +64,7 @@ class Polyclip(PolyclipTypes):
         xx=np.zeros(npix,dtype=self.INT)
         yy=np.zeros(npix,dtype=self.INT)
 
+        
         # call the compiled C-code
         cpolyclip.multi(l,r,b,t,\
                         x.astype(self.FLT).ravel(),\
@@ -68,12 +80,7 @@ class Polyclip(PolyclipTypes):
         return xx,yy,areas,polyinds
 
 
-    def multi(self,x,y):
-        ''' call the multi polygon clipping '''
-
-        return self(x,y)
-    
-        
+          
     
     def single(self,x,y):
         ''' call the single polygon clipping '''
