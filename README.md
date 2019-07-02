@@ -1,6 +1,6 @@
 # polyclip
 
-A python driver for [polyclip_multi](http://tir.astro.utoledo.edu/jdsmith/code/idl.php) written in C by JD Smith.
+A python driver for [polyclip](http://tir.astro.utoledo.edu/jdsmith/code/idl.php) written in C by JD Smith.
 
 ## Installation
 ```
