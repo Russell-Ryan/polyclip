@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 import numpy as np
 
-import cpolyclip
+from . import cpolyclip
 
 
 @dataclass(frozen=True)
@@ -14,7 +14,7 @@ class PolyclipTypes(object):
 
 
 class Polyclip(PolyclipTypes):
-    ''' A class to call the polyclip_multi by JD Smith '''
+    ''' A class to call the polyclip by JD Smith '''
 
     def __init__(self,dim):
         ''' the input variable dim should be a tuple with 2 elements: 
