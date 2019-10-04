@@ -1,4 +1,7 @@
 build/
 __pycache__/
 *~
+*.so
+dist/
+polyclip.egg-info/
 
