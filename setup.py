@@ -31,7 +31,7 @@ setup(name=PKG,
       long_description=info['__doc__'],
       license='MIT',\
       packages=['polyclip'],\
-      install_requires=['numpy'],\
+      install_requires=['numpy>=1.14'],\
       classifiers=["Development Status :: 5 Production/Stable ",
                    'Intended Audience :: Science/Research',
                    'Topic :: Scientific/Engineering :: Astronomy',],\
