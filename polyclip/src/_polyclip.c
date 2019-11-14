@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <Python.h>
 #include <numpy/npy_no_deprecated_api.h>
