@@ -1,5 +1,7 @@
 # polyclip
 
+[![Build Status](https://travis-ci.org/Russell-Ryan/polyclip.svg?branch=master)](https://travis-ci.org/Russell-Ryan/polyclip)
+
 A python driver for [polyclip](http://tir.astro.utoledo.edu/jdsmith/code/idl.php) written in C by JD Smith.
 
 ## Installation
