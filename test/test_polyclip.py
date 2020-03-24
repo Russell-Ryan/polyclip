@@ -25,6 +25,9 @@ def test_multiclip():
     
     # initialize the clipper
     clip=polyclip.Polyclip(naxis)
+
+    # print the clipping object
+    print(clip)
     
     # create 2 polygons to clip... here they're an irregular quadralateral, but
     # this isn't a requirement
