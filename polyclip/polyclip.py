@@ -133,5 +133,5 @@ class Polyclip(PolyclipTypes):
         
     def __str__(self):
         out="polyclip> python driver for the compiled C polyclip by JD Smith\n"
-        out=out+'          image dimensions: {}x{}'.format(self._sx,self._sy)
+        out=out+'          image dimensions: {}\u00d7{}'.format(self._sx,self._sy)
         return out
